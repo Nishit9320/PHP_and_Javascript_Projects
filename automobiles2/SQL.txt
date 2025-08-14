@@ -1,0 +1,17 @@
+create database misc1;
+
+CREATE TABLE autos1 (
+    auto_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    make VARCHAR(128),
+    year INT,
+    mileage INT,
+    PRIMARY KEY (auto_id)
+);
+
+-- Create the user with password
+CREATE USER 'fred1'@'localhost' IDENTIFIED BY 'zap1';
+CREATE USER 'fred1'@'127.0.0.1' IDENTIFIED BY 'zap1';
+
+-- Grant privileges
+GRANT ALL PRIVILEGES ON misc1.* TO 'fred1'@'localhost';
+GRANT ALL PRIVILEGES ON misc1.* TO 'fred1'@'127.0.0.1';
